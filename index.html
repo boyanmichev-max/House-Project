@@ -3,82 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School House Points Tracker</title>
-    <link rel="stylesheet" href="styles.css">
-    </head>
+    <title>House Points Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
 
-    <button id="adminButton" class="admin-button">A</button>
+    <!-- Admin Button -->
+    <button id="adminBtn">A</button>
 
-    <div id="mainView" class="container">
-        
-        <div class="house-grid">
-            
-            <div id="acrobats" class="house">
-                <div class="logo-placeholder">
-                    <img src="https://github.com/boyanmichev-max/House-Project/blob/main/acrobats.jpg" alt="Green Monkeys Logo" class="house-logo">
-                </div>
-                <h2 class="house-name">Acrobats</h2>
-                <div class="score-container">
-                    Points: <span id="score-acrobats" class="current-score">0</span>
-                </div>
-            </div>
-
-            <div id="bravehearts" class="house">
-                <div class="logo-placeholder">
-                    <img src="https://github.com/boyanmichev-max/House-Project/blob/main/Bravehearts.jpg" alt="Yellow Lions Logo" class="house-logo">
-                </div>
-                <h2 class="house-name">Bravehearts</h2>
-                <div class="score-container">
-                    Points: <span id="score-bravehearts" class="current-score">0</span>
-                </div>
-            </div>
-
-            <div id="druids" class="house">
-                <div class="logo-placeholder">
-                    <img src="https://github.com/boyanmichev-max/House-Project/blob/main/druids.jpg" alt="Blue Owls Logo" class="house-logo">
-                </div>
-                <h2 class="house-name">Druids</h2>
-                <div class="score-container">
-                    Points: <span id="score-druids" class="current-score">0</span>
-                </div>
-            </div>
-
-            <div id="quicksilver" class="house">
-                <div class="logo-placeholder">
-                    <img src="https://github.com/boyanmichev-max/House-Project/blob/main/Quicksilver.jpg" alt="Red Foxes Logo" class="house-logo">
-                </div>
-                <h2 class="house-name">Quicksilver</h2>
-                <div class="score-container">
-                    Points: <span id="score-quicksilver" class="current-score">0</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="school-logo-space">
-            <img src="https://github.com/boyanmichev-max/House-Project/blob/main/Logo_Smiling.png" alt="School Logo" class="school-logo-img">
-            <p>School Logo Area</p>
+    <!-- Admin Login Modal -->
+    <div id="adminModal" class="modal">
+        <div class="modal-content">
+            <h2>Admin Login</h2>
+            <input type="password" id="adminPassword" placeholder="Enter Password">
+            <button onclick="checkPassword()">Submit</button>
+            <button class="closeBtn" onclick="closeModal()">Cancel</button>
+            <p id="errorMessage"></p>
         </div>
     </div>
 
-    <div id="adminLogin" class="admin-overlay" style="display: none;">
-        <div class="admin-modal">
-            <h3>Admin Login</h3>
-            <p>Enter Password (Default: admin)</p>
-            <input type="password" id="adminPassword" placeholder="Password">
-            <button onclick="loginAdmin()">Login</button>
-            <button onclick="closeAdminLogin()">Cancel</button>
-            <p id="loginMessage" class="error-message"></p>
+    <!-- Admin Panel -->
+    <div id="adminPanel" class="modal">
+        <div class="modal-content large">
+            <h2>Admin Panel – Edit House Points</h2>
+
+            <div class="admin-grid">
+                <!-- Acrobats -->
+                <div class="admin-house">
+                    <h3>Acrobats</h3>
+                    <p id="acroAdminPoints">0</p>
+                    <button onclick="changePoints('acrobats', 1)">+1</button>
+                    <button onclick="changePoints('acrobats', -1)">-1</button>
+                </div>
+
+                <!-- Bravehearts -->
+                <div class="admin-house">
+                    <h3>Bravehearts</h3>
+                    <p id="braveAdminPoints">0</p>
+                    <button onclick="changePoints('bravehearts', 1)">+1</button>
+                    <button onclick="changePoints('bravehearts', -1)">-1</button>
+                </div>
+
+                <!-- Druids -->
+                <div class="admin-house">
+                    <h3>Druids</h3>
+                    <p id="druidAdminPoints">0</p>
+                    <button onclick="changePoints('druids', 1)">+1</button>
+                    <button onclick="changePoints('druids', -1)">-1</button>
+                </div>
+
+                <!-- Quicksilver -->
+                <div class="admin-house">
+                    <h3>Quicksilver</h3>
+                    <p id="quickAdminPoints">0</p>
+                    <button onclick="changePoints('quicksilver', 1)">+1</button>
+                    <button onclick="changePoints('quicksilver', -1)">-1</button>
+                </div>
+            </div>
+
+            <button class="closeBtn" onclick="closeAdminPanel()">Close</button>
         </div>
     </div>
 
-    <div id="adminPanel" class="admin-panel" style="display: none;">
-        <h2>Admin Point Editor</h2>
-        <div id="adminControls">
+    <!-- Main House Grid -->
+    <div class="house-grid">
+
+        <!-- Acrobats -->
+        <div class="house-card green">
+            <h2>Acrobats</h2>
+            <div class="logo-space">
+                <!-- INSERT HOUSE LOGO URL BELOW -->
+                <img src="PASTE_ACROBATS_LOGO_URL_HERE" alt="Acrobats Logo">
             </div>
-        <button onclick="saveAndExitAdmin()">Save & Exit</button>
+            <p class="points" id="acrobatsPoints">0</p>
+        </div>
+
+        <!-- Bravehearts -->
+        <div class="house-card yellow">
+            <h2>Bravehearts</h2>
+            <div class="logo-space">
+                <!-- INSERT HOUSE LOGO URL BELOW -->
+                <img src="PASTE_BRAVEHEARTS_LOGO_URL_HERE" alt="Bravehearts Logo">
+            </div>
+            <p class="points" id="braveheartsPoints">0</p>
+        </div>
+
+        <!-- Druids -->
+        <div class="house-card blue">
+            <h2>Druids</h2>
+            <div class="logo-space">
+                <!-- INSERT HOUSE LOGO URL BELOW -->
+                <img src="PASTE_DRUIDS_LOGO_URL_HERE" alt="Druids Logo">
+            </div>
+            <p class="points" id="druidsPoints">0</p>
+        </div>
+
+        <!-- Quicksilver -->
+        <div class="house-card red">
+            <h2>Quicksilver</h2>
+            <div class="logo-space">
+                <!-- INSERT HOUSE LOGO URL BELOW -->
+                <img src="PASTE_QUICKSILVER_LOGO_URL_HERE" alt="Quicksilver Logo">
+            </div>
+            <p class="points" id="quicksilverPoints">0</p>
+        </div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- School Logo Bottom Space -->
+    <div class="school-logo">
+        <!-- REPLACE THIS WITH YOUR SCHOOL LOGO URL -->
+        <img src="PASTE_SCHOOL_LOGO_URL_HERE" alt="School Logo">
+    </div>
+
+<script src="script.js"></script>
 </body>
 </html>
