@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School House Points Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <button id="adminButton" class="admin-button">A</button>
+
+    <div id="mainView" class="container">
+        <div id="greenMonkeys" class="house top-left">
+            <div class="logo-placeholder">[GREEN MONKEYS LOGO (Acrobats)]</div>
+            <h2 class="house-name">Green Monkeys</h2>
+            <p class="house-title">Acrobats</p>
+            <div class="score-container">
+                Points: <span id="score-greenMonkeys" class="current-score">0</span>
+            </div>
+        </div>
+
+        <div id="yellowLions" class="house top-right">
+            <div class="logo-placeholder">[YELLOW LIONS LOGO (Bravehearts)]</div>
+            <h2 class="house-name">Yellow Lions</h2>
+            <p class="house-title">Bravehearts</p>
+            <div class="score-container">
+                Points: <span id="score-yellowLions" class="current-score">0</span>
+            </div>
+        </div>
+
+        <div id="blueOwls" class="house bottom-left">
+            <div class="logo-placeholder">[BLUE OWLS LOGO (Druids)]</div>
+            <h2 class="house-name">Blue Owls</h2>
+            <p class="house-title">Druids</p>
+            <div class="score-container">
+                Points: <span id="score-blueOwls" class="current-score">0</span>
+            </div>
+        </div>
+
+        <div id="redFoxes" class="house bottom-right">
+            <div class="logo-placeholder">[RED FOXES LOGO (Quicksilver)]</div>
+            <h2 class="house-name">Red Foxes</h2>
+            <p class="house-title">Quicksilver</p>
+            <div class="score-container">
+                Points: <span id="score-redFoxes" class="current-score">0</span>
+            </div>
+        </div>
+        
+        <div class="school-logo-space">
+            [Insert School Logo Here - e.g., a square image of 100x100 pixels]
+        </div>
+    </div>
+
+    <div id="adminLogin" class="admin-overlay" style="display: none;">
+        <div class="admin-modal">
+            <h3>Admin Login</h3>
+            <p>Enter Password (Default: admin)</p>
+            <input type="password" id="adminPassword" placeholder="Password">
+            <button onclick="loginAdmin()">Login</button>
+            <button onclick="closeAdminLogin()">Cancel</button>
+            <p id="loginMessage" class="error-message"></p>
+        </div>
+    </div>
+
+    <div id="adminPanel" class="admin-panel" style="display: none;">
+        <h2>Admin Point Editor</h2>
+        <div id="adminControls">
+            </div>
+        <button onclick="saveAndExitAdmin()">Save & Exit</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

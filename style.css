@@ -1,0 +1,244 @@
+/* Basic Reset and Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative; /* For absolute positioning of admin button and houses */
+}
+
+/* Container for main view */
+.container {
+    flex-grow: 1;
+    position: relative;
+}
+
+/* House Styling and Positioning */
+.house {
+    width: 25%; /* To control size, adjust as needed */
+    padding: 20px;
+    border: 3px solid #ccc;
+    text-align: center;
+    position: absolute; /* Positions in corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.top-left {
+    top: 0;
+    left: 0;
+}
+
+.top-right {
+    top: 0;
+    right: 0;
+}
+
+.bottom-left {
+    bottom: 0;
+    left: 0;
+}
+
+.bottom-right {
+    bottom: 0;
+    right: 0;
+}
+
+/* Specific House Colors */
+#greenMonkeys { border-color: #4CAF50; } /* Green */
+#yellowLions { border-color: #FFC107; } /* Yellow/Gold */
+#blueOwls { border-color: #2196F3; } /* Blue */
+#redFoxes { border-color: #F44336; } /* Red */
+
+/* Logo Placeholder */
+.logo-placeholder {
+    width: 100px;
+    height: 100px;
+    background-color: #ddd;
+    margin: 0 auto 10px;
+    line-height: 100px;
+    font-size: 0.8em;
+    border: 1px dashed #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.house-name {
+    margin: 5px 0;
+    font-size: 1.5em;
+}
+
+.house-title {
+    margin: 0 0 10px;
+    font-style: italic;
+    color: #666;
+}
+
+.score-container {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #333;
+}
+
+.current-score {
+    color: #007bff; /* Highlight the score */
+}
+
+/* School Logo Space */
+.school-logo-space {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 120px;
+    background-color: #eee;
+    border: 1px dashed #999;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 0.8em;
+    color: #666;
+}
+
+/* Admin Button Styling */
+.admin-button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #673AB7; /* Purple */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1.2em;
+    cursor: pointer;
+    z-index: 100; /* Ensure it's on top */
+}
+
+.admin-button:hover {
+    background-color: #512DA8;
+}
+
+/* Admin Overlay and Modal */
+.admin-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+}
+
+.admin-modal {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#adminPassword {
+    padding: 10px;
+    margin: 10px 0;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.admin-modal button {
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+
+.admin-modal button:first-of-type { /* Login button */
+    background-color: #4CAF50;
+    color: white;
+}
+.admin-modal button:last-of-type { /* Cancel button */
+    background-color: #f44336;
+    color: white;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+/* Admin Panel Styling */
+.admin-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    padding: 20px;
+    z-index: 300;
+    overflow-y: auto;
+}
+
+.admin-panel h2 {
+    text-align: center;
+    color: #673AB7;
+}
+
+.admin-control-group {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-control-group label {
+    font-weight: bold;
+    font-size: 1.2em;
+    flex-grow: 1;
+}
+
+.admin-control-group input[type="number"] {
+    width: 80px;
+    padding: 8px;
+    margin-right: 15px;
+    text-align: right;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+}
+
+.admin-control-group button {
+    padding: 8px 15px;
+    margin-left: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+
+.add-btn { background-color: #4CAF50; color: white; }
+.subtract-btn { background-color: #F44336; color: white; }
+
+.admin-panel > button { /* Save & Exit */
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
