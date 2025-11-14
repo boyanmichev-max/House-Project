@@ -5,50 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School House Points Tracker</title>
     <link rel="stylesheet" href="styles.css">
-</head>
+    </head>
 <body>
 
     <button id="adminButton" class="admin-button">A</button>
 
     <div id="mainView" class="container">
-        <div id="greenMonkeys" class="house top-left">
-            <div class="logo-placeholder">[GREEN MONKEYS LOGO (Acrobats)]</div>
-            <h2 class="house-name">Green Monkeys</h2>
-            <p class="house-title">Acrobats</p>
-            <div class="score-container">
-                Points: <span id="score-greenMonkeys" class="current-score">0</span>
-            </div>
-        </div>
-
-        <div id="yellowLions" class="house top-right">
-            <div class="logo-placeholder">[YELLOW LIONS LOGO (Bravehearts)]</div>
-            <h2 class="house-name">Yellow Lions</h2>
-            <p class="house-title">Bravehearts</p>
-            <div class="score-container">
-                Points: <span id="score-yellowLions" class="current-score">0</span>
-            </div>
-        </div>
-
-        <div id="blueOwls" class="house bottom-left">
-            <div class="logo-placeholder">[BLUE OWLS LOGO (Druids)]</div>
-            <h2 class="house-name">Blue Owls</h2>
-            <p class="house-title">Druids</p>
-            <div class="score-container">
-                Points: <span id="score-blueOwls" class="current-score">0</span>
-            </div>
-        </div>
-
-        <div id="redFoxes" class="house bottom-right">
-            <div class="logo-placeholder">[RED FOXES LOGO (Quicksilver)]</div>
-            <h2 class="house-name">Red Foxes</h2>
-            <p class="house-title">Quicksilver</p>
-            <div class="score-container">
-                Points: <span id="score-redFoxes" class="current-score">0</span>
-            </div>
-        </div>
         
+        <div class="house-grid">
+            
+            <div id="acrobats" class="house">
+                <div class="logo-placeholder">
+                    <img src="https://github.com/boyanmichev-max/House-Project/blob/main/acrobats.jpg" alt="Green Monkeys Logo" class="house-logo">
+                </div>
+                <h2 class="house-name">Acrobats</h2>
+                <div class="score-container">
+                    Points: <span id="score-acrobats" class="current-score">0</span>
+                </div>
+            </div>
+
+            <div id="bravehearts" class="house">
+                <div class="logo-placeholder">
+                    <img src="https://github.com/boyanmichev-max/House-Project/blob/main/Bravehearts.jpg" alt="Yellow Lions Logo" class="house-logo">
+                </div>
+                <h2 class="house-name">Bravehearts</h2>
+                <div class="score-container">
+                    Points: <span id="score-bravehearts" class="current-score">0</span>
+                </div>
+            </div>
+
+            <div id="druids" class="house">
+                <div class="logo-placeholder">
+                    <img src="https://github.com/boyanmichev-max/House-Project/blob/main/druids.jpg" alt="Blue Owls Logo" class="house-logo">
+                </div>
+                <h2 class="house-name">Druids</h2>
+                <div class="score-container">
+                    Points: <span id="score-druids" class="current-score">0</span>
+                </div>
+            </div>
+
+            <div id="quicksilver" class="house">
+                <div class="logo-placeholder">
+                    <img src="https://github.com/boyanmichev-max/House-Project/blob/main/Quicksilver.jpg" alt="Red Foxes Logo" class="house-logo">
+                </div>
+                <h2 class="house-name">Quicksilver</h2>
+                <div class="score-container">
+                    Points: <span id="score-quicksilver" class="current-score">0</span>
+                </div>
+            </div>
+        </div>
+
         <div class="school-logo-space">
-            [Insert School Logo Here - e.g., a square image of 100x100 pixels]
+            <img src="https://github.com/boyanmichev-max/House-Project/blob/main/Logo_Smiling.png" alt="School Logo" class="school-logo-img">
+            <p>School Logo Area</p>
         </div>
     </div>
 
